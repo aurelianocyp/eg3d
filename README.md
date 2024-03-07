@@ -30,6 +30,7 @@ Pre-trained networks are stored as `*.pkl` files that can be referenced using lo
 # Generate videos using pre-trained model
 # 工作目录在里面的eg3d，即要进入两个eg3d目录
 # 这里的network_snapshot.pkl需要改为上面下载的五个模型之一，其中ffhq512-128是生成人的
+# 生成结果在out中
 
 python gen_videos.py --outdir=out --trunc=0.7 --seeds=0-3 --grid=2x2 \
     --network=networks/network_snapshot.pkl
