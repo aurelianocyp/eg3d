@@ -5,6 +5,7 @@
   - `cd eg3d`
   - `conda env create -f environment.yml`
   - `conda activate eg3d`
+
 注释：
 * We recommend Linux for performance and compatibility reasons.
 * 1&ndash;8 high-end NVIDIA GPUs. We have done all testing and development using V100, RTX3090, and A100 GPUs.
