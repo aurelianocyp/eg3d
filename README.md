@@ -16,7 +16,7 @@
 
 ## Getting started
 
-Pre-trained networks are stored as `*.pkl` files that can be referenced using local filenames. See [Models](./docs/models.md) for download links to pre-trained checkpoints.
+Pre-trained networks are stored as `*.pkl` files that can be referenced using local filenames. See [Models](./docs/models.md) for download links to pre-trained checkpoints. 点进去再点 NGC Catalog链接找download即可下载。下载完后放在内层的eg3d文件夹中的networks文件夹中，自行创建
  - afhqcats512-128.pkl
  - ffhq512-128.pkl
  - ffhqrebalanced512-64.pkl
