@@ -126,9 +126,13 @@ python preprocess_in_the_wild.py --indir=INPUT_IMAGE_FOLDER
 
 如果报nvdiffrast的错，next3d中有关于安装nvdiffrast的指示
 
+git submodule后把Deep3DFaceRecon_pytorch模块删了，下载我的库里的模块（因为使用原本的模块会有个ninja报错，无法消除，使用新模块可以消除）
+
 需要下载三个东西，01_MorphableModel和Exp_Pca放在BFM文件夹中，epoch_20放在checkpoints/pretrained目录下
 
-先运行一次process in the wild，随后将indir文件夹复制到Deep3DFaceRecon_pytorch中，通过命令 `cp -r <indir> Deep3DFaceRecon_pytorch`
+先运行一次process in the wild，随后将indir文件夹复制到Deep3DFaceRecon_pytorch中，通过命令 `cp -r <indir> Deep3DFaceRecon_pytorch`, 随后再运行一次。主要是因为Deep3DFaceRecon_pytorch中的图片目录没有dection文件夹，没有文件夹则无法生成mat，obj等文件，最大的问题是不生成还不报错。
+
+处理成功的话会在<indir>目录内出现dections文件夹和crop文件夹和mirror后的每张图片以及一个camera.json文件，将<indir>复制到需要放置的文件夹中就行
 
 
 
