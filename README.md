@@ -122,6 +122,14 @@ In case you want to crop in-the-wild face images and extract poses using [Deep3D
 cd dataset_preprocessing/ffhq
 python preprocess_in_the_wild.py --indir=INPUT_IMAGE_FOLDER
 ```
+要处理的图片放在ffhq/<indir>中
+
+如果报nvdiffrast的错，next3d中有关于安装nvdiffrast的指示
+
+需要下载三个东西，01_MorphableModel和Exp_Pca放在BFM文件夹中，epoch_20放在checkpoints/pretrained目录下
+
+先运行一次process in the wild，随后将indir文件夹复制到Deep3DFaceRecon_pytorch中，通过命令 `cp -r <indir> Deep3DFaceRecon_pytorch`
+
 
 
 **AFHQv2**: Download and process the [AFHQv2 dataset](https://github.com/clovaai/stargan-v2/blob/master/README.md#animal-faces-hq-dataset-afhq) with the following.
@@ -188,32 +196,3 @@ python calc_metrics.py --metrics=fid50k_full --data=~/datasets/ffhq_512.zip \
 ```
 
 Note that the metrics can be quite expensive to compute (up to 1h), and many of them have an additional one-off cost for each new dataset (up to 30min). Also note that the evaluation is done using a different random seed each time, so the results will vary if the same metric is computed multiple times.
-
-References:
-1. [GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium](https://arxiv.org/abs/1706.08500), Heusel et al. 2017
-2. [Demystifying MMD GANs](https://arxiv.org/abs/1801.01401), Bi&nacute;kowski et al. 2018
-
-<!-- ## License
-
-Copyright &copy; 2021, NVIDIA Corporation & affiliates. All rights reserved.
-
-This work is made available under the [Nvidia Source Code License](https://github.com/NVlabs/stylegan3/blob/main/LICENSE.txt). -->
-
-## Citation
-
-```
-@inproceedings{Chan2022,
-  author = {Eric R. Chan and Connor Z. Lin and Matthew A. Chan and Koki Nagano and Boxiao Pan and Shalini De Mello and Orazio Gallo and Leonidas Guibas and Jonathan Tremblay and Sameh Khamis and Tero Karras and Gordon Wetzstein},
-  title = {Efficient Geometry-aware {3D} Generative Adversarial Networks},
-  booktitle = {CVPR},
-  year = {2022}
-}
-```
-
-## Development
-
-This is a research reference implementation and is treated as a one-time code drop. As such, we do not accept outside code contributions in the form of pull requests.
-
-## Acknowledgements
-
-We thank David Luebke, Jan Kautz, Jaewoo Seo, Jonathan Granskog, Simon Yuen, Alex Evans, Stan Birchfield, Alexander Bergman, and Joy Hsu for feedback on drafts, Alex Chan, Giap Nguyen, and Trevor Chan for help with diagrams, and Colette Kress and Bryan Catanzaro for allowing use of their photographs. This project was in part supported by Stanford HAI and a Samsung GRO. Koki Nagano and Eric Chan were partially supported by DARPA’s Semantic Forensics (SemaFor) contract (HR0011-20-3-0005). The views and conclusions contained in this document are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the U.S. Government. Distribution Statement "A" (Approved for Public Release, Distribution Unlimited).
