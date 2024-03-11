@@ -134,6 +134,8 @@ git submodule后把Deep3DFaceRecon_pytorch模块删了，下载我的库里的�
 
 处理成功的话会在<indir>目录内出现dections文件夹和crop文件夹和mirror后的每张图片以及一个camera.json文件，将<indir>复制到需要放置的文件夹中就行
 
+如果要向indir中添加图片然后重新处理，先把camera.json，detections，crop都删了。然后需要把Deep3DFaceRecon_pytorch中的indir也删了。还需要把checkpoints中得到的mat obj jpg那些结果的文件夹删了
+
 
 
 **AFHQv2**: Download and process the [AFHQv2 dataset](https://github.com/clovaai/stargan-v2/blob/master/README.md#animal-faces-hq-dataset-afhq) with the following.
