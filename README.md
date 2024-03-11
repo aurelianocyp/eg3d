@@ -132,6 +132,8 @@ git submodule后把Deep3DFaceRecon_pytorch模块删了，下载我的库里的�
 
 先运行一次process in the wild，随后将indir文件夹复制到Deep3DFaceRecon_pytorch中，通过命令 `cp -r <indir> Deep3DFaceRecon_pytorch`, 随后再运行一次。主要是因为Deep3DFaceRecon_pytorch中的图片目录没有dection文件夹，没有文件夹则无法生成mat，obj等文件，最大的问题是不生成还不报错。
 
+复制回命令cp -r eg3d/dataset_preprocessing/ffhq/projector_test_data/ EG3D-projector/eg3d/
+
 处理成功的话会在<indir>目录内出现dections文件夹和crop文件夹和mirror后的每张图片以及一个camera.json文件，将<indir>复制到需要放置的文件夹中就行
 
 如果要向indir中添加图片然后重新处理，先把camera.json，detections，crop都删了。然后需要把Deep3DFaceRecon_pytorch中的indir也删了。还需要把checkpoints中得到的mat obj jpg那些结果的文件夹删了
