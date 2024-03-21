@@ -122,7 +122,7 @@ In case you want to crop in-the-wild face images and extract poses using [Deep3D
 cd dataset_preprocessing/ffhq
 python preprocess_in_the_wild.py --indir=INPUT_IMAGE_FOLDER
 ```
-要处理的图片放在ffhq/<indir>中.--
+要处理的图片放在ffhq/\<indir\>中.--
 
 如果报nvdiffrast的错，next3d中有关于安装nvdiffrast的指示
 
